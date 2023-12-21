@@ -7,7 +7,6 @@ def login():
     driver = webdriver.Firefox()
     try:
         driver.get("https://testnsg.order4sure.nl")
-
         WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, "username")))
 
         driver.find_element(By.ID, "username").send_keys("Hubbase_stage")
