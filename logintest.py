@@ -8,14 +8,13 @@ def login():
     try:
         driver.get("https://testnsg.order4sure.nl")
 
-        # Wait for the username field to be present
         WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, "username")))
 
         driver.find_element(By.ID, "username").send_keys("Hubbase_stage")
         driver.find_element(By.ID, "password").send_keys("logistics")
         driver.find_element(By.ID, "submit_button").click()
 
-        # Wait for the "Akkoord" button to be present and clickable
+        # Wachten totdat de akkoord button op de pop up zichtbaar is
         akkoord_button = WebDriverWait(driver, 10).until(
             EC.element_to_be_clickable((By.XPATH, "/html/body/div[5]/div[2]/div/div/div/div/div/div/div/div[4]/button"))
         )
@@ -29,11 +28,8 @@ def login():
         return None
 
     finally:
-        # You might want to uncomment the following line to close the browser after the test
-        # driver.quit()
         pass
 
-# Execute the login function only when the script is run directly
 if __name__ == "__main__":
     login()
 

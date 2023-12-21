@@ -5,9 +5,9 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
-#menu test
+#menu test@
 # Alle items in het menu getest + vermeld welke menu item wat is, 
-# zodat testen in de toekomst makkelijker wordt@
+# zodat testen die moeten navigeren in de toekomst makkelijker worden@
 
 
 driver = login()  
